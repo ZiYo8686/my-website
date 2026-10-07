@@ -1,88 +1,118 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的个人主页</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #4facfe, #00f2fe);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      text-align: center;
-      color: white;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.15);
-      padding: 50px;
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-    }
-
-    .avatar {
-      width: 120px;
-      height: 120px;
-      background: white;
-      border-radius: 50%;
-      margin: 0 auto 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 50px;
-      color: #4facfe;
-    }
-
-    h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 18px;
-      margin-bottom: 30px;
-      opacity: 0.9;
-    }
-
-    .btn {
-      padding: 12px 25px;
-      background: white;
-      color: #4facfe;
-      border: none;
-      border-radius: 30px;
-      font-size: 16px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .btn:hover {
-      background: #f0f0f0;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZiYo · 个人主页</title>
+<meta name="description" content="ZiYo 的个人主页：开发者日志、做过的东西，以及一些想法。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a5fb4'/%3E%3Ctext x='16' y='23' font-size='19' font-family='sans-serif' fill='white' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="card">
-    <div class="avatar">🚀</div>
-    <h1>你好，我是 ZiYo！</h1>
-    <p>这是我自己搭建的第一个网站 ✨</p>
- <button class="btn">点我有惊喜</button>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">ZiYo</a>
+    <nav class="nav">
+      <a href="#log">日志</a>
+      <a href="#work">作品</a>
+      <a href="#about">关于</a>
+      <a href="#contact">联系</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <div class="monogram">Z</div>
+    <h1>你好，我是 ZiYo</h1>
+    <p class="lede">喜欢研究一些有趣的物件——简洁易用，只保留必要的功能。这里记录我做过的东西，和一些零碎的想法。</p>
   </div>
 
-  <script>
-    const btn = document.querySelector('.btn')
-    btn.addEventListener('click', () => {
-      alert('恭喜！你的网站已经升级完成啦！')
-    })
-  </script>
+  <section id="log">
+    <div class="sec-head">
+      <h2>开发者日志</h2>
+      <span class="hint">按时间倒序</span>
+    </div>
+    <ul class="post-list">
+      <li>
+        <a class="post-link" href="posts/2026-10-07-redesign.html">
+          <span class="post-date">2026-10-07</span>
+          <p class="post-title">把网站重新装修了一遍</p>
+          <p class="post-sum">从一张孤零零的卡片，变成一个有日志、有作品、能点进去的首页。</p>
+        </a>
+      </li>
+      <li>
+        <a class="post-link" href="posts/2026-09-18-sync-tool.html">
+          <span class="post-date">2026-09-18</span>
+          <p class="post-title">让待办自己飞进飞书</p>
+          <p class="post-sum">用自动化工具把微软待办定时同步到飞书多维表格，省掉每天手动搬一遍的功夫。</p>
+        </a>
+      </li>
+      <li>
+        <a class="post-link" href="posts/2026-04-22-first-site.html">
+          <span class="post-date">2026-04-22</span>
+          <p class="post-title">我的第一个网站上线了</p>
+          <p class="post-sum">一个居中的卡片、一层渐变背景、一个点下去会弹提示的按钮。很小，但是我的。</p>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="work">
+    <div class="sec-head">
+      <h2>作品 / 项目</h2>
+      <span class="hint">做过的和正在做的</span>
+    </div>
+    <div class="grid">
+      <a class="card" href="index.html">
+        <span class="tag">网页 · 2026</span>
+        <h3>个人主页</h3>
+        <p>你现在看到的这个网站。手写 HTML 和 CSS，没用任何框架，托管在 GitHub Pages 上。</p>
+      </a>
+      <a class="card" href="posts/2026-09-18-sync-tool.html">
+        <span class="tag">自动化 · 已归档</span>
+        <h3>待办同步工具</h3>
+        <p>定时把 Outlook 和微软待办里的内容同步进飞书多维表格，让重复的事交给程序去做。</p>
+      </a>
+      <a class="card" href="#contact">
+        <span class="tag">持续增加中</span>
+        <h3>下一个还在路上</h3>
+        <p>这里会慢慢长出新的东西。如果你好奇我在折腾什么，随时来找我聊。</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="sec-head">
+      <h2>关于我</h2>
+    </div>
+    <p>喜欢研究一些有趣的物件，偏好<strong>简洁易用</strong>的东西——够用的功能，加上舒服的体验，一起打磨着往前走。</p>
+    <p>这个网站是我自己搭的第一个网站：没有框架、没有构建步骤，就是几个手写的文件。之所以这么做，是想弄明白一个网页到底是怎么从一堆文本变成你能看到的样子的。</p>
+    <p>平时会折腾一些自动化小工具，把重复的事情交给程序。也会把过程中踩的坑记在<a href="#log">日志</a>里——既是备忘，也算留给以后的自己。</p>
+  </section>
+
+  <section id="contact">
+    <div class="sec-head">
+      <h2>联系与打赏</h2>
+      <span class="hint">欢迎来聊</span>
+    </div>
+    <div class="contact">
+      <a href="mailto:ziyo86@outlook.com">ziyo86@outlook.com</a>
+      <a href="https://github.com/ZiYo8686">GitHub</a>
+      <a href="https://buymeacoffee.com/ziyo86">Buy Me a Coffee</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 ZiYo</span>
+    <span>手写 HTML 与 CSS · 托管于 GitHub Pages</span>
+  </div>
+</footer>
+
 </body>
 </html>

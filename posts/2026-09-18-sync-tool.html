@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>让待办自己飞进飞书 · ZiYo</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a5fb4'/%3E%3Ctext x='16' y='23' font-size='19' font-family='sans-serif' fill='white' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">ZiYo</a>
+    <nav class="nav">
+      <a href="../index.html#log">日志</a>
+      <a href="../index.html#work">作品</a>
+      <a href="../index.html#about">关于</a>
+      <a href="../index.html#contact">联系</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="article">
+    <h1>让待办自己飞进飞书</h1>
+    <p class="meta">2026-09-18</p>
+
+    <p>我在两个地方记待办：微软待办和 Outlook 邮箱里的日程。但平时真正盯着的却是飞书。以前的做法是每天手动抄一遍——从这边看完，切到那边敲键盘。抄了两周我就受不了了，这种纯粹搬运的活儿，不该由人干。</p>
+
+    <h2>做法</h2>
+
+    <p>思路很朴素：让一台机器定时去微软那边把数据取回来，整理成飞书多维表格能接受的格式，再写进去。整条链路分成两段：</p>
+
+    <ul>
+      <li><strong>取数据并写入</strong>：一段定时脚本，按固定节奏跑，把待办、日程的标题、时间、状态抓下来，映射到表格对应的字段。</li>
+      <li><strong>维持登录状态</strong>：这是真正的麻烦点。微软那边不会让你一直用同一个凭据，得定期换新的。所以脚本里还得带一段“自己把自己的钥匙更新掉”的逻辑。</li>
+    </ul>
+
+    <h2>踩过的坑</h2>
+
+    <h3>凭据会过期，而且不会提前告诉你</h3>
+
+    <p>最难受的一类问题：脚本某天开始静默失败，日志里只有一句含糊的报错，实际原因只是那把钥匙过期了。后来明白了——<strong>凡是和第三方打交道的自动化，都要把“钥匙续期”当成一等公民来设计</strong>，不能当成附带的小事。</p>
+
+    <h3>失败通知比失败本身更烦人</h3>
+
+    <p>钥匙一过期，定时任务每次跑都失败，于是开始每天往邮箱里塞失败通知。到最后，我收到的邮件比同步成功的待办还多。这也让我意识到：自动化的“报错噪音”本身就是一个需要设计的东西。</p>
+
+    <h2>后记</h2>
+
+    <p>这套东西我用了几个月，确实省下了每天那十分钟。后来换了电脑、换了系统，那把钥匙的续期链条断了，我也就不打算再修它了——需求本身已经变了。</p>
+
+    <p>但它留下的经验还在用：<strong>把重复的事交给程序，同时把“程序坏了怎么知道”也一起想清楚。</strong></p>
+
+    <blockquote>已归档。但这个项目教会我的东西，比它省下来的时间更值钱。</blockquote>
+
+    <a class="back" href="../index.html#log">← 返回日志列表</a>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 ZiYo</span>
+    <span>手写 HTML 与 CSS · 托管于 GitHub Pages</span>
+  </div>
+</footer>
+
+</body>
+</html>

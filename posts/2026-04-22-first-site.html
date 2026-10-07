@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的第一个网站上线了 · ZiYo</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a5fb4'/%3E%3Ctext x='16' y='23' font-size='19' font-family='sans-serif' fill='white' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">ZiYo</a>
+    <nav class="nav">
+      <a href="../index.html#log">日志</a>
+      <a href="../index.html#work">作品</a>
+      <a href="../index.html#about">关于</a>
+      <a href="../index.html#contact">联系</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="article">
+    <h1>我的第一个网站上线了</h1>
+    <p class="meta">2026-04-22</p>
+
+    <p>今天把第一个网站做出来了，地址是 <code>ziyo8686.github.io/my-website</code>。这件事听起来很小，但对一个之前完全没碰过网页的人来说，看到自己写的字真真切切地出现在浏览器地址栏里，那种感觉还挺奇妙的。</p>
+
+    <h2>它长什么样</h2>
+
+    <p>就一张居中的卡片，垫在一层蓝到青的渐变背景上。卡片里有一个圆形头像位、一句“你好，我是 ZiYo”，还有一个按钮——点下去会弹出一个提示框，写着“恭喜！你的网站已经升级完成啦！”。</p>
+
+    <p>功能少到几乎不能叫“功能”，但我把它当成一个起点：先让一个页面跑起来，再谈别的。</p>
+
+    <h2>过程中搞明白的事</h2>
+
+    <ul>
+      <li><strong>网页其实就是文本。</strong> 一个 HTML 文件，浏览器读它就渲染成页面。没有什么神秘的东西藏在后面。</li>
+      <li><strong>CSS 决定样子，HTML 决定内容。</strong> 两者分开写，改颜色的时候不用动文字。</li>
+      <li><strong>GitHub Pages 是免费的。</strong> 把文件传上去，点几下开关，全世界就能访问了。</li>
+    </ul>
+
+    <h2>一些没想到的细节</h2>
+
+    <p>比如那个头像圆圈，我以为随手写个 <code>class</code> 就行，结果漏了个等号，整个样式就全都不生效了——页面看起来没报错，只是安静地跟你想的不一样。这类“静默失败”后来我又遇到过好几次，也慢慢养成了回头核对一遍的习惯。</p>
+
+    <blockquote>先让它跑起来，再让它好看。这句话我打算一直用下去。</blockquote>
+
+    <hr>
+
+    <p>下一步想做的，是把它从一个“单张卡片”变成一个真的能逛一逛的地方。</p>
+
+    <a class="back" href="../index.html#log">← 返回日志列表</a>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 ZiYo</span>
+    <span>手写 HTML 与 CSS · 托管于 GitHub Pages</span>
+  </div>
+</footer>
+
+</body>
+</html>
